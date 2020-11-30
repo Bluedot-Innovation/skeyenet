@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 beautifulsoup4 = "*"
 lxml = "*"
+numpy = "*"
+tqdm = "*"
+opencv-python = "*"
 
 [dev-packages]
 pylint = "*"
