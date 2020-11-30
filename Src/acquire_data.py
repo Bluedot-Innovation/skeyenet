@@ -67,8 +67,8 @@ def clean_images(images, output_directory):
 	>output_directory (str): path with Images and Targets.
 	"""
 
-	images_dir = output_directory + "/Images/"
-	targets_dir = output_directory + "/Targets/"
+	images_dir = output_directory + "sat/"
+	targets_dir = output_directory + "map/"
 
 	print("images to delete: {}".format(len(images)))
 
@@ -94,12 +94,12 @@ if __name__ == '__main__':
 
 	if not os.path.exists(output_directory):
 		os.mkdir(output_directory)
-		os.mkdir(output_directory + "Images/")
-		os.mkdir(output_directory + "Targets/")
+		os.mkdir(output_directory + "sat/")
+		os.mkdir(output_directory + "map/")
 
 	start_time = time.time()
-	# download_images(link_file_images, output_directory, "Images")
-	# download_images(link_file_targets, output_directory, "Targets")
+	download_images(link_file_images, output_directory, "Images")
+	download_images(link_file_targets, output_directory, "Targets")
 	faulty_images = ["23129065_15",
 					 "23129125_15",
 					 "23129140_15",
