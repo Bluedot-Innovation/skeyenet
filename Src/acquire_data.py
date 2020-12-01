@@ -98,8 +98,8 @@ if __name__ == '__main__':
 		os.mkdir(output_directory + "map/")
 
 	start_time = time.time()
-	download_images(link_file_images, output_directory, "Images")
-	download_images(link_file_targets, output_directory, "Targets")
+	download_images(link_file_images, output_directory, "sat")
+	download_images(link_file_targets, output_directory, "map")
 	faulty_images = ["23129065_15",
 					 "23129125_15",
 					 "23129140_15",

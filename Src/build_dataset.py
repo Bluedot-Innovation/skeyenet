@@ -86,8 +86,10 @@ def crop_and_save(images_path, masks_path, new_images_path, new_masks_path, img_
     print('Total number of files =',len(files))
     
     for image_file in tqdm(files, total = len(files)):
+        print(image_file)
        
         image_path = images_path + image_file
+        print(image_path)
         image = cv2.imread(image_path)
         
         mask_path = masks_path + image_file[:-1]
