@@ -86,8 +86,10 @@ def crop_and_save(images_path, masks_path, new_images_path, new_masks_path, img_
     print('Total number of files =',len(files))
     
     for image_file in tqdm(files, total = len(files)):
+        print(image_file)
        
         image_path = images_path + image_file
+        print(image_path)
         image = cv2.imread(image_path)
         
         mask_path = masks_path + image_file[:-1]
@@ -131,7 +133,7 @@ def crop_and_save(images_path, masks_path, new_images_path, new_masks_path, img_
 
 
 if __name__ == "__main__":
-    root_data_path = "../Data/BuildingsDataSet/"
+    root_data_path = "./Data/MassachusettsBuildings/"
     test_to_train_ratio = 0.3 
     img_width = img_height = 256
     num_channels = 3
@@ -149,5 +151,5 @@ if __name__ == "__main__":
         else:
              print("DIRECTORY ALREADY EXISTS: {}".format(path))
 
-    crop_and_save(images_path, masks_path, new_image_path, new_mask_path, img_width, img_height)
+    crop_and_save(images_path, masks_path, new_images_path, new_masks_path, img_width, img_height)
     train_test_split(new_images_path, new_masks_path, test_to_train_ratio)
